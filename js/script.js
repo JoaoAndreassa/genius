@@ -7,13 +7,13 @@ let score = 0;
 //2 = amarelo
 //3 = azul
 
-const blue = document.querySelector('.blue');
-const red = document.querySelector('.red');
-const green = document.querySelector('.green');
-const yellow = document.querySelector('.yellow');
+const blue = document.querySelector('#blue');
+const red = document.querySelector('#red');
+const green = document.querySelector('#green');
+const yellow = document.querySelector('#yellow');
 
 let shuffleOrder = () => {
-  let colorOrder = Math.floor(math.randon() * 4);
+  let colorOrder = Math.floor(Math.random() * 4);
   order[order.length] = colorOrder;
   clickedOrder = [];
 
@@ -23,56 +23,55 @@ let shuffleOrder = () => {
 
   }
 }
-let lightColor = (element , number)=>{
-  number = number*500;
-  setTimeout(() =>{
-    element.classlist.add('selected')
+let lightColor = (element, number) => {
+  number = number * 500;
+  setTimeout(() => {
+      element.classList.add('selected');
   }, number - 250);
-  setTimeout(() =>{
-    element.classlist.remove('selected')
-  });
+  setTimeout(() => {
+      element.classList.remove('selected');
+  }, number * 1);
 }
 
 
 let checkOrder = () => {
-  for (let i in clickedOrder){
-    if(clickedOrder[i] != order[i]){
-      lose();
-      break;
-    }
+  for(let i in clickedOrder) {
+      if(clickedOrder[i] != order[i]) {
+          lose();
+          break;
+      }
   }
-  if(clickedOrder.length == order.length){
-    alert(`pointuação: ${score}\n Boa! Proximo nivel!`);
-    nextlevel()
+  if(clickedOrder.length == order.length) {
+      alert(`Pontuação: ${score}\nVocê acertou! Iniciando próximo nível!`);
+      nextlevel();
   }
 }
-let click = (color)=>{
-  clickedOrder[checkOrder.length] = color;
-  createColorElement(color).classlist.add('selected');
+let click = (color) => {
+  clickedOrder[clickedOrder.length] = color;
+  createColorElement(color).classList.add('selected');
 
   setTimeout(() => {
-    createColorElement(color).classlist.remove('selected');
-    checkOrder();
+      createColorElement(color).classList.remove('selected');
+      checkOrder();
   },250);
- 
 }
 
 
-let createColorElement = (color) =>{
-  if (color == 0){
-    return green;
-  }else if(color==1){
-    return red;
-  }else if (color ==2){
-    return yellow;
-
-  }else if(color ==3){
-    return blue;
+//funcao que retorna a cor
+let createColorElement = (color) => {
+  if(color == 0) {
+      return green;
+  } else if(color == 1) {
+      return red;
+  } else if (color == 2) {
+      return yellow;
+  } else if (color == 3) {
+      return blue;
   }
 }
 //funçap para proximo nivel
 
-let nextlevel = () =>{
+var nextlevel = () =>{
   score ++;
   shuffleOrder();
 }
@@ -86,15 +85,19 @@ let lose = ()=>{
 
   playGame();
 }
-let playGame = () => {
+var playGame = () => {
   alert ('Bem vindo ao genius! bora começar!')
 
   score = 0
   nextlevel();
+  
+
+  
 }
-green.onclick = () => click(0);
-red.onclick = () => click(1);
-yellow.onclick = () => click(2);
-blue.onclick = () => click(3);
+
+  green.onclick = () => click(0)
+  red.onclick = () => click(1)
+  yellow.onclick = () => click(2)
+  blue.onclick = () => click(3)
 
 playGame();
