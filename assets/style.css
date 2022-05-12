@@ -2,15 +2,14 @@ body{
   
   background-color: rgb(242, 183, 107);
   margin: 0px;
-  width: 2400px;
+  width: 1800px;
 }
 main{
   position: relative;
-  margin-top: 5%;
-  margin-left: 37%;
-  
-  height: 10vh;
-  width: 10vw;
+  margin-top: 10%;
+  margin-left: 10%;
+  height: 10rem;
+  width: 10rem;
   
 }
 
@@ -23,8 +22,9 @@ main{
   background-color: white;
   border-radius: 100%;
   
-  width: 700px;
-  height: 700px;
+  width: 43.75rem;
+   
+  height:43.75rem;
 
 }
 #blue{
