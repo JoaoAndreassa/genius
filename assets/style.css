@@ -1,16 +1,13 @@
 body{
   
   background-color: rgb(242, 183, 107);
-  margin: 0px;
-  width: 1800px;
+  margin:2rem;
+  margin-top: 5rem;
+  
 }
 main{
   position: relative;
-  margin-top: 10%;
-  margin-left: 10%;
-  height: 10rem;
-  width: 10rem;
-  
+ 
 }
 
 .genius{
@@ -22,9 +19,9 @@ main{
   background-color: white;
   border-radius: 100%;
   
-  width: 43.75rem;
+  width: 21rem;
    
-  height:43.75rem;
+  height:21rem;
 
 }
 #blue{
